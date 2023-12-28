@@ -84,7 +84,7 @@ function TodoList() {
   };
 
   const createTodo = async () => {
-    await axios.post("https://todo-app-gxm3.onrender.com/v1/add", {
+    await axios.post("http://localhost:3001/v1/add", {
       task: task,
     });
   };
