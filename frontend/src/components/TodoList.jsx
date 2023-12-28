@@ -13,7 +13,9 @@ function TodoList() {
   useEffect(() => {
     const fetchTodos = async () => {
       try {
-        const response = await axios.get("https://todo-app-gxm3.onrender.com/v1/");
+        const response = await axios.get(
+          "https://todo-app-gxm3.onrender.com/v1/"
+        );
         setTodos(response.data);
         setLoading(false);
       } catch (error) {
@@ -24,7 +26,9 @@ function TodoList() {
 
     const fetchActiveTodos = async () => {
       try {
-        const response = await axios.get("https://todo-app-gxm3.onrender.com/v1/");
+        const response = await axios.get(
+          "https://todo-app-gxm3.onrender.com/v1/"
+        );
         const filteredTodos = response.data.filter((todo) => !todo.done);
 
         setTodos(filteredTodos);
@@ -37,7 +41,9 @@ function TodoList() {
 
     const fetchDoneTodos = async () => {
       try {
-        const response = await axios.get("https://todo-app-gxm3.onrender.com/v1/");
+        const response = await axios.get(
+          "https://todo-app-gxm3.onrender.com/v1/"
+        );
         const filteredTodos = response.data.filter((todo) => todo.done);
 
         setTodos(filteredTodos);
@@ -68,7 +74,9 @@ function TodoList() {
 
   const markTodoAsDone = async (id) => {
     try {
-      await axios.put(`https://todo-app-gxm3.onrender.com/v1/update/${id}`, { done: true });
+      await axios.put(`https://todo-app-gxm3.onrender.com/v1/update/${id}`, {
+        done: true,
+      });
       setTodos((prevTodos) =>
         prevTodos.map((todo) =>
           todo._id === id ? { ...todo, done: true } : todo
@@ -84,7 +92,7 @@ function TodoList() {
   };
 
   const createTodo = async () => {
-    await axios.post("http://localhost:3001/v1/add", {
+    await axios.post("https://todo-app-gxm3.onrender.com/v1/add", {
       task: task,
     });
   };
