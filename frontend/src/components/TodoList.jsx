@@ -99,7 +99,7 @@ function TodoList() {
   return (
     <>
       <header>
-        <h1>Todoist</h1>
+        <h1>TodoList</h1>
       </header>
       <div>
         <form className="form" onSubmit={createTodo}>
